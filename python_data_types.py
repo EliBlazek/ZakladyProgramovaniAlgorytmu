@@ -160,7 +160,7 @@ def WorkingWithDicts():
     print(phonebook)
 
     info = {('Name', 'Surname'):('John', 'Doe')}
-    for key, value info.items():
-        output = str.join("_", values)
+    #for key, value info.items():
+        #output = str.join("_", values)
 WorkingWithDicts()
     
