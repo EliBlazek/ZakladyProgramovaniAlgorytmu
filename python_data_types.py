@@ -159,8 +159,10 @@ def WorkingWithDicts():
     phonebook = {("Adam", "Novák"):("6853314")}
     print(phonebook)
 
-    info = {('Name', 'Surname'):('John', 'Doe')}
-    #for key, value info.items():
-        #output = str.join("_", values)
+    info = {('Name', 'Surname'):('John', 'Doe')} #Zdroj: Stack overflow (thread už si nepamatuju), bratr
+    for key, value in info.items():
+        output = str.join("_", value)
+        print(output)
+
 WorkingWithDicts()
     
