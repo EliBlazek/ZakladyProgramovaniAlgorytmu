@@ -33,17 +33,67 @@ print("And", LogicalSentense2, "is", LogicOp2())
 #######################
 def TwoStringsToOne():
     x = '[[]]'
+    x1 = x[0:2]
+    x2 = x[2:4]
     y = 'PYTHON'
+    result_str = x1 + y + x2
+    print(result_str) #This may be the worst possibne solution to this problem. But it kinda works!
+
+TwoStringsToOne()
 
 def OneFromAnother():
     x = "Python"
     y = "Perl"
 
-    MutatedStr1 = print(x[4:6]*4)
-    MutatedStr2 = print(y[2]*6)
-    return(MutatedStr1, MutatedStr2)
+    MutatedStr1 = x[4:6]*4
+    MutatedStr2 = y[2]*6
+    print(MutatedStr1, MutatedStr2)
 
-print(OneFromAnother())
+OneFromAnother()
+
+#######################
+#String manipulation 2#
+#######################
+def FirstHalfUpperCase(): 
+    x = "python"
+    upperPart = x[0:len(x)//2].upper
+    #lowerPart = x[len(x)//2:]
+    print(upperPart)
+
+FirstHalfUpperCase()
+    
 
 
+############
+#Fix errors#
+############
 
+print(7 + 3 * 2) #Works well - order of operation gives the correct answer - 13
+print('7' + str(3*2) ) #It will calcule the second expression and then concat the two strings - 76
+print('7' + '3 * 2') #This just concats the strings together - 73 * 2
+#print('7' + 3 * 2) - This would cause runtime error. You cannot combine data types THAT freely. 
+#But if this was JS, it would just calculate the numbers... in some weird way. Because JS is weird. 
+
+##################
+#Formated strings#
+##################
+
+def printHobbyA(): #Why is camel code bad? (refering back to your presentation. I like camel code...)
+    hobby = "writting bad Python code"
+    x = f"My hobby is {hobby}"
+    print(x)
+    #I think that for this type of assignment, f strings are superior.
+printHobbyA()
+
+def printHobbyB():
+    hobby = "writting bad Python code"
+    x = "My hobby is {0}.".format(hobby)
+    print(x)
+    #And this is the requested solution.
+printHobbyB()
+
+def TransformDate(): #######DOESNT WORK. NEEDS FIXING############
+    origDate = '2018-11-01'
+    formatedDate = '{:>5}'.format(origDate)
+    print(formatedDate)
+TransformDate()
