@@ -28,9 +28,9 @@ def LogicOp2():
 print(LogicalSentense1, "is", LogicOp1())
 print("And", LogicalSentense2, "is", LogicOp2())
 
-#######################
-#STRING MANIPULATION 1#
-#######################
+########################
+#STRING MANIPULATION #1#
+########################
 def TwoStringsToOne():
     x = '[[]]'
     x1 = x[0:2]
@@ -51,18 +51,34 @@ def OneFromAnother():
 
 OneFromAnother()
 
-#######################
-#String manipulation 2#
-#######################
+
+########################
+#STRING MANIPULATION #2#
+########################
 def FirstHalfUpperCase(): 
-    x = "python"
-    upperPart = x[0:len(x)//2].upper
-    #lowerPart = x[len(x)//2:]
-    print(upperPart)
+    str1 = "python"
+    LenStr = len(str1)//2
+    str2 = str1[0:LenStr:1].upper()
+    str1 = str1[LenStr:]
+    print(str2 + str1)
 
 FirstHalfUpperCase()
-    
 
+def RepeatFirstLetter():
+    x = "python" 
+    y = "git"
+    z = "Hello world"
+    k = "A string that will be a long scream of aaa"
+    letter_switch = y
+    num_repeats = len(letter_switch)
+    repeatedLetter = letter_switch[:1:]
+    for i in range(num_repeats): #These complicated conditions are required in order to print the characters correctly to one line. Now I am really starting to doubt if it was a good idea to refuse using Jupyter notebook.
+        if i < num_repeats-1:
+            print(repeatedLetter, end = "")
+        else: 
+            print(repeatedLetter)
+    
+RepeatFirstLetter()
 
 ############
 #Fix errors#
@@ -92,8 +108,59 @@ def printHobbyB():
     #And this is the requested solution.
 printHobbyB()
 
-def TransformDate(): #######DOESNT WORK. NEEDS FIXING############
+def TransformDate(): #Yay! It works now! Web that helped me understand it: https://www.dotnetperls.com/truncate-python #
     origDate = '2018-11-01'
-    formatedDate = '{:>5}'.format(origDate)
+    formatedDate = origDate[5:]
     print(formatedDate)
 TransformDate()
+
+##################
+#DATA STRUCTURES#
+#################
+def WorkWithHobbies():
+    myHobbies = []
+    myHobbies.append("Playing videogames")
+    myHobbies.append("Making video games")
+    myHobbies.append("Shitposting on Twitter dot com")
+    myHobbies.append("Tinkering Linux")
+    myHobbies.append("Writting bad Python code") #I should've written a function for this. But I need to do it somehow, then I can write it well.
+    print(myHobbies[0]) #Print your fav hobby
+    print(myHobbies[-1]) #Print your least fav hobby
+    del myHobbies[-1] #Delete your least fav hobby
+    print(myHobbies[-1]) #Check if your least fav hobby changed. 
+WorkWithHobbies()
+
+def WorkingWithCities():
+    filler = "*"
+    cities = ['Prague', 'Brno', 'Ostrava', 'Plzen', 'Liberec', 'Olomouc', 'Usti nad Labem', 'Hradec Kralove', 'Ceske Budejovice', 'Pardubice']
+    cities.sort()
+    citiesJoined = filler.join(cities)
+    print(cities)
+    print(citiesJoined)
+
+WorkingWithCities()
+
+def ScanningZen():
+    ZenOfPy = set("Beautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Readability counts.Special cases aren't special enough to break the rules.Although practicality beats purity.Errors should never pass silently.Unless explicitly silenced.In the face of ambiguity, refuse the temptation to guess.There should be one-- and preferably only one --obvious way to do it.Although that way may not be obvious at first unless you're Dutch.Now is better than never.Although never is often better than *right* now.If the implementation is hard to explain, it's a bad idea.If the implementation is easy to explain, it may be a good idea.")
+    alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    x = alphabet.difference(ZenOfPy)
+    print("These letters are not present in the Zen of Python matra:", x)
+ScanningZen()
+
+def WorkingWithDicts():
+    d = {'payton':'An interpreted, object-oriented programming language'}#Broken dict
+    newKey = ("python")
+    oldKey = ("payton")
+    if newKey != oldKey: #Method from: https://stackoverflow.com/questions/16475384/rename-a-dictionary-key 
+        d[newKey] = d[oldKey]
+        del d[oldKey]
+    print(d)
+
+    phonebook = {("Adam", "Novák"):("6853314")}
+    print(phonebook)
+
+    info = {('Name', 'Surname'):('John', 'Doe')}
+    for key, value info.items():
+        output = str.join("_", values)
+WorkingWithDicts()
+    
