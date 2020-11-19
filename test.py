@@ -1,21 +1,8 @@
-def another_custom_division():
-    while True:
-        my_num1 = input("Insert 1st number")
-        my_num2 = input("Insert 2nd number")
-        try:
-            x = float(my_num1) 
-            y = float(my_num2) 
-        except:
-            print("Please insert a number. That was not a number")
-            continue
-        else: 
-            if y == 0:
-                print("We cannot divide by zero.") #I don't know, what's better. To use 'try: x/y' or this. 
-                continue
-            else: 
-                my_end_result = x/y
-                return(my_end_result)
-            break
-                
+year = int(input("Greetings! What is your year of origin."))
 
-print(another_custom_division())
+if year <= 1900:
+    print("Woah. That's the past.")
+elif year > 1900 and year < 2020:
+    print("That's totally the present.")
+elif year >= 2020:
+    print("Far out, that's the future.")
